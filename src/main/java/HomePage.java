@@ -13,30 +13,20 @@ public class HomePage {
     @FindBy(id = "js-link-box-en")
     WebElement goEnglish;
 
-    public HomePage(WebDriver driver)
-    {
-         this.driver = driver;
+    public HomePage(WebDriver driver) {
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-
-
-    public void rechercheEntrer(String text)
-    {
+    public void rechercheEntrer(String text) {
         barreRecherche.sendKeys(text);
         barreRecherche.sendKeys(Keys.ENTER);
-
-        //return new ResultsPage(driver);
     }
 
 
 
-    public void englishPage()
-    {
-
+    public void englishPage() {
         goEnglish.sendKeys(Keys.ENTER);
-
-        //return new ResultsPage(driver);
     }
 
 }

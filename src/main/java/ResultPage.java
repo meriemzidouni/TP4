@@ -11,12 +11,10 @@ public class ResultPage {
     @FindBy(id ="firstHeading")
     WebElement title;
 
-    public ResultPage(WebDriver driver)
-    {
+    public ResultPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
 
     public String getResult()
     {

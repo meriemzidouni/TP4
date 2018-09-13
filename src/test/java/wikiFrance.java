@@ -12,8 +12,7 @@ public class wikiFrance {
     WebDriver driver;
 
     @Before
-    public void setup()
-    {
+    public void setup() {
         driver = new ChromeDriver();
         driver.get("https://www.wikipedia.org");
         driver.manage().window().maximize();
@@ -27,16 +26,12 @@ public class wikiFrance {
     }
 
     @Test
-    public void testEnter()
-    {
+    public void testEnter() {
         HomePage homePage = new HomePage(driver);
         homePage.englishPage();
-
         homePage.rechercheEntrer("france");//new ResultsPage(driver);
-
         ResultPage resultPage = new ResultPage(driver);
         String result = resultPage.getResult();
-
         Assert.assertThat(result, is( "France"));
     }
 
