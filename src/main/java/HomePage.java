@@ -7,20 +7,34 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage {
     WebDriver driver;
 
-    @FindBy(id = "searchInput")
+    @FindBy(id ="searchInput")
     WebElement barreRecherche;
+
+    @FindBy(id = "js-link-box-en")
+    WebElement goEnglish;
 
     public HomePage(WebDriver driver)
     {
-        //this fait reférence au driver de la classe actuelle
-        this.driver = driver;
+         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
+
 
     public void rechercheEntrer(String text)
     {
         barreRecherche.sendKeys(text);
         barreRecherche.sendKeys(Keys.ENTER);
+
+        //return new ResultsPage(driver);
+    }
+
+
+
+    public void englishPage()
+    {
+
+        goEnglish.sendKeys(Keys.ENTER);
 
         //return new ResultsPage(driver);
     }

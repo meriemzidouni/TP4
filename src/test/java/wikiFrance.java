@@ -30,6 +30,8 @@ public class wikiFrance {
     public void testEnter()
     {
         HomePage homePage = new HomePage(driver);
+        homePage.englishPage();
+
         homePage.rechercheEntrer("france");//new ResultsPage(driver);
 
         ResultPage resultPage = new ResultPage(driver);
